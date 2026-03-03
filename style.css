@@ -1,0 +1,102 @@
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #37352f;
+    background-color: #f8fafc; /* Slate-50 */
+    scroll-behavior: smooth;
+}
+
+/* Kartu Gaya Notion */
+.notion-card {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #e2e8f0;
+    background: white; 
+}
+
+/* Efek Hover Kartu */
+.notion-card:hover {
+    background-color: #f0f7ff;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px -10px rgba(59, 130, 246, 0.15);
+    border-color: #bfdbfe;
+}
+
+/* Navigasi Transparan Blur */
+.glass-nav {
+    background: rgba(248, 250, 252, 0.8); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Badge Keahlian */
+.skill-badge {
+    background: #eff6ff;
+    color: #2563eb;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid #dbeafe;
+}
+/* ════════════════════════════════════════════
+   RESPONSIVE DESIGN — Mobile First Override
+   Breakpoints: 768px (tablet), 1024px (desktop)
+   This block aligns with the HTML classes in this project
+═══════════════════════════════════════════════ */
+
+/* ── TABLET & ke bawah (max 1023px) ────────── */
+@media (max-width: 1023px) {
+
+  /* adapt skills grid for tablet */
+  .skills__grid, .skills-container { grid-template-columns: repeat(2, 1fr); }
+
+  /* hero scale down slightly on tablet */
+  .hero__title, h1 { font-size: 2.4rem; }
+}
+
+/* ── MOBILE (max 767px) — smartphone friendly tweaks ───────────────────── */
+@media (max-width: 767px) {
+
+  /* --- layout spacing --- */
+  body { font-size: 15px; }
+  .container, header, section, footer { padding: 16px; }
+
+  /* --- navbar: keep links visible, touch-friendly --- */
+  nav { padding: 8px 12px; }
+  .nav-right { display:flex; gap:10px; align-items:center; overflow-x:auto; -webkit-overflow-scrolling:touch }
+  .nav-link { padding:10px 12px; font-size:15px; white-space:nowrap }
+
+  /* --- header / hero --- */
+  .cover-image { height:120px; margin-bottom:-56px; border-radius:12px }
+  .profile-container { margin:-56px auto 8px auto; text-align:center }
+  .profile-img { width:96px; height:96px; border-radius:12px; border-width:5px }
+  .profile-img-pic { width:100%; height:100%; object-fit:cover; border-radius:10px }
+
+  h1, .hero__title { font-size:28px; text-align:center; margin-top:10px }
+  .subtitle, .hero__desc { font-size:14px; text-align:center; color:#6b7280; margin-top:6px }
+
+  .header-actions { display:flex; flex-direction:column; gap:10px; align-items:center; margin-top:14px }
+  .btn-pdf, .btn-contact { width:100%; padding:10px 14px; box-sizing:border-box }
+
+  /* --- skills --- */
+  .skills__grid, .skills-container { grid-template-columns: 1fr; gap:12px }
+  .skills { padding:48px 0 }
+  .section-title { font-size:1.4rem }
+
+  /* --- gallery / projects --- */
+  .gallery { display:flex; gap:14px; overflow-x:auto; padding:8px 0 20px 0; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch }
+  .gallery::-webkit-scrollbar { display:none }
+  .proj-card { flex:0 0 80vw; max-width:320px; scroll-snap-align:start; border-radius:12px }
+  .proj-card .proj-content { padding:12px }
+  .swipe-hint { display:flex; justify-content:flex-end; font-size:12px; color:#6b7280 }
+
+  /* --- certificates/list items: stack for mobile --- */
+  .card-list { display:flex; flex-direction:column; gap:12px }
+  .item-row { flex-direction:row; align-items:center }
+
+  /* make images responsive if any raw <img> exist */
+  img { max-width:100%; height:auto; display:block }
+    /* Ensure project/profile/certificate images cover their container without distortion */
+    .proj-img, .proj-img-area img, .profile-img-pic, .certificate-card img { object-fit: cover; }
+
+}
