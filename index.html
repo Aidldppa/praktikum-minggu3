@@ -1,320 +1,285 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aidil Daffa | Portofolio Personal</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aidil Daffa | Portofolio Personal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="selection:bg-blue-200">
 
-    <nav class="fixed top-0 w-full z-50 glass-nav border-b border-blue-100/50 bg-white/80 backdrop-blur-md">
-        <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between gap-2">
-            <div class="flex items-center gap-2 flex-shrink-0">
-                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">AD</div>
-                <span class="font-bold tracking-tight text-blue-900 hidden sm:block text-sm">Aidil Daffa.</span>
-            </div>
+    <!-- 1. HEADER (NAVBAR) -->
+    <nav class="fixed top-0 w-full z-50 glass-nav border-b border-blue-100/50 bg-white/80 backdrop-blur-md">
+    <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between gap-2">
+        
+        <div class="flex items-center gap-2 flex-shrink-0">
+            <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">AD</div>
+            <span class="font-bold tracking-tight text-blue-900 hidden sm:block text-sm">Aidil Daffa.</span>
+        </div>
 
-            <div class="flex items-center gap-3 sm:gap-8 text-[11px] sm:text-sm font-bold text-gray-500">
-                <a href="#about" class="hover:text-blue-600 transition-colors whitespace-nowrap">Tentang</a>
-                <a href="#skills" class="hover:text-blue-600 transition-colors whitespace-nowrap">Keahlian</a>
-                <a href="#experience" class="hover:text-blue-600 transition-colors whitespace-nowrap">Organisasi</a>
-                <a href="#projects" class="hover:text-blue-600 transition-colors whitespace-nowrap">Project</a>
-                
-                <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-slate-700 hover:bg-gray-200 transition-all">
-                    <span id="theme-icon">🌙</span>
-                </button>
-            </div>
-        </div>
-    </nav>
+       <div class="flex items-center gap-3 sm:gap-8 text-[11px] sm:text-sm font-bold text-gray-500">
+    <a href="#about" class="hover:text-blue-600 transition-colors whitespace-nowrap">Tentang</a>
+    <a href="#skills" class="hover:text-blue-600 transition-colors whitespace-nowrap">Keahlian</a>
+    <a href="#experience" class="hover:text-blue-600 transition-colors whitespace-nowrap">Organisasi</a>
+    <a href="#projects" class="hover:text-blue-600 transition-colors whitespace-nowrap">Project</a>
+    
+    <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-slate-700 hover:bg-gray-200 transition-all">
+        <span id="theme-icon">🌙</span>
+    </button>
+</div>
+    </div>
+</nav>
+    <main class="max-w-5xl mx-auto px-6 pt-32 pb-24">
+        
+        <!-- 2. HERO SECTION + PROFIL -->
+        <section id="about" class="mb-24">
+            <div class="flex flex-col-reverse md:flex-row items-start md:items-center justify-between gap-12">
+                <div class="flex-1 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold border border-blue-200">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                        </span>
+                        Tersedia untuk Project Baru
+                    </div>
+                    <h1 class="text-5xl md:text-6xl font-extrabold tracking-tighter leading-tight text-slate-900">
+                        Mahasiswa <span class="text-blue-600">Sistem Informasi</span> & Kreator Digital.
+                    </h1>
+                    <p class="text-xl text-slate-500 leading-relaxed max-w-2xl">
+                        Saya Aidil Daffa, mahasiswa di UMSU jurusan Sistem Informasi yang menggabungkan logika sistem informasi dengan estetika desain grafis dan ketajaman jurnalistik.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="https://drive.google.com/file/d/1ZcGYMUcyRDvmFXHSGReR5fy4ENkQaEzB/view?usp=sharing" target="_blank" class="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold shadow-lg shadow-blue-100 hover:bg-blue-700 transition-all text-sm flex items-center gap-2">
+                            <span>📄</span> View PDF Portofolio
+                        </a>
+                        <a href="#experience" class="bg-white border border-blue-200 text-blue-700 px-6 py-3 rounded-xl font-semibold hover:bg-blue-50 transition-all text-sm">Pengalaman Organisasi</a>
+                    <a href="mailto:xaidildaffa@gmail.com" class="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-all text-sm">Hubungi Saya</a>
+                    </div>
+                </div>
+                <div class="w-48 h-48 md:w-64 md:h-64 relative">
+                    <img src="DSCN4309.JPG" 
+                         alt="Foto Profil Aidil Daffa" 
+                         class="w-full h-full object-cover rounded-[2rem] shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500 border-8 border-white">
+                    <div class="absolute -bottom-4 -right-4 bg-white p-4 rounded-2xl shadow-xl hidden md:block border border-blue-50">
+                        <span class="text-2xl">🎓</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <main class="max-w-5xl mx-auto px-6 pt-32 pb-24">
-        
-        <section id="about" class="mb-24">
-            <div class="flex flex-col-reverse md:flex-row items-start md:items-center justify-between gap-12">
-                <div class="flex-1 space-y-6">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold border border-blue-200">
-                        <span class="relative flex h-2 w-2">
-                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-                        </span>
-                        Tersedia untuk Project Baru
-                    </div>
-                    <h1 class="text-5xl md:text-6xl font-extrabold tracking-tighter leading-tight text-slate-900">
-                        Mahasiswa <span class="text-blue-600">Sistem Informasi</span> & Kreator Digital.
-                    </h1>
-                    <p class="text-xl text-slate-500 leading-relaxed max-w-2xl">
-                        Saya Aidil Daffa, mahasiswa di UMSU jurusan Sistem Informasi yang menggabungkan logika sistem informasi dengan estetika desain grafis dan ketajaman jurnalistik.
-                    </p>
-                    <div class="flex flex-wrap gap-4 pt-4">
-                        <a href="https://drive.google.com/file/d/1ZcGYMUcyRDvmFXHSGReR5fy4ENkQaEzB/view?usp=sharing" target="_blank" class="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold shadow-lg shadow-blue-100 hover:bg-blue-700 transition-all text-sm flex items-center gap-2">
-                            <span>📄</span> View PDF Portofolio
-                        </a>
-                        <a href="#experience" class="bg-white border border-blue-200 text-blue-700 px-6 py-3 rounded-xl font-semibold hover:bg-blue-50 transition-all text-sm">Pengalaman Organisasi</a>
-                        <a href="mailto:xaidildaffa@gmail.com" class="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-all text-sm">Hubungi Saya</a>
-                    </div>
-                </div>
-                <div class="w-48 h-48 md:w-64 md:h-64 relative">
-                    <img src="DSCN4309.JPG" alt="Foto Profil Aidil Daffa" class="w-full h-full object-cover rounded-[2rem] shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500 border-8 border-white">
-                    <div class="absolute -bottom-4 -right-4 bg-white p-4 rounded-2xl shadow-xl hidden md:block border border-blue-50">
-                        <span class="text-2xl">🎓</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- 3. ISI KONTEN: SERTIFIKAT -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-10">
+                <h2 class="text-2xl font-bold tracking-tight text-blue-950">Sertifikasi Terbaru</h2>
+                <div class="h-px flex-1 bg-blue-200/50"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="group cursor-pointer">
+                    <div class="notion-card rounded-2xl overflow-hidden mb-4 shadow-sm border-blue-100/50">
+                        <img src="sertif.jpg" 
+                             alt="Sertifikat Digital" 
+                             class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800">Sertifikasi Juara 3 Infografis CDAC UMSU</h3>
+                    <p class="text-sm text-blue-600 font-medium">Infografis CDAC UMSU</p>
+                </div>
+                <div class="group cursor-pointer">
+                    <div class="notion-card rounded-2xl overflow-hidden mb-4 shadow-sm border-blue-100/50">
+                        <img src="sertif2.jpg" 
+                             alt="Sertifikat Jurnalistik" 
+                             class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800">Sertifikat Aktif Berorganisasi</h3>
+                    <p class="text-sm text-blue-600 font-medium">LPM Teropong UMSU </p>
+                </div>
+            </div>
+        </section>
 
-        <section class="mb-24">
-            <div class="flex items-center gap-4 mb-10">
-                <h2 class="text-2xl font-bold tracking-tight text-blue-950">Sertifikasi Terbaru</h2>
-                <div class="h-px flex-1 bg-blue-200/50"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="group cursor-pointer">
-                    <div class="notion-card rounded-2xl overflow-hidden mb-4 shadow-sm border-blue-100/50">
-                        <img src="sertif.jpg" alt="Sertifikat Digital" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <h3 class="font-bold text-lg text-slate-800">Sertifikasi Juara 3 Infografis CDAC UMSU</h3>
-                    <p class="text-sm text-blue-600 font-medium">Infografis CDAC UMSU</p>
-                </div>
-                <div class="group cursor-pointer">
-                    <div class="notion-card rounded-2xl overflow-hidden mb-4 shadow-sm border-blue-100/50">
-                        <img src="sertif2.jpg" alt="Sertifikat Jurnalistik" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <h3 class="font-bold text-lg text-slate-800">Sertifikat Aktif Berorganisasi</h3>
-                    <p class="text-sm text-blue-600 font-medium">LPM Teropong UMSU </p>
-                </div>
-            </div>
-        </section>
+        <!-- SKILLS -->
+        <section id="skills" class="mb-24 p-10 bg-white rounded-[3rem] border border-blue-100 shadow-sm">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <div class="space-y-6">
+                    <h3 class="text-sm font-black uppercase tracking-widest text-blue-600 italic">Hard Skills</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-semibold text-blue-900">Web Development (HTML, CSS, JS)</span>
+                                <span class="text-xs text-blue-400 font-bold">85%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                                <div class="bg-blue-600 h-full w-[85%] rounded-full shadow-[0_0_8px_rgba(37,99,235,0.3)]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-semibold text-blue-900">UI/UX Design (Figma)</span>
+                                <span class="text-xs text-blue-400 font-bold">80%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                                <div class="bg-blue-600 h-full w-[90%] rounded-full shadow-[0_0_8px_rgba(37,99,235,0.3)]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-semibold text-blue-900">Graphic Design (Photoshop)</span>
+                                <span class="text-xs text-blue-400 font-bold">80%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                                <div class="bg-blue-600 h-full w-[80%] rounded-full shadow-[0_0_8px_rgba(37,99,235,0.3)]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <h3 class="text-sm font-black uppercase tracking-widest text-blue-600 italic">Soft Skills</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-badge">Leadership</span>
+                        <span class="skill-badge">Public Speaking</span>
+                        <span class="skill-badge">Problem Solving</span>
+                        <span class="skill-badge">Critical Thinking</span>
+                        <span class="skill-badge">Time Management</span>
+                        <span class="skill-badge">Collaboration</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <section id="skills" class="mb-24 p-10 bg-white rounded-[3rem] border border-blue-100 shadow-sm transition-colors duration-300">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
-                <div class="space-y-6">
-                    <h3 class="text-sm font-black uppercase tracking-widest text-blue-600 italic">Hard Skills</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm font-semibold text-blue-900">Web Development (HTML, CSS, JS)</span>
-                                <span class="text-xs text-blue-400 font-bold counter" data-target="85">0%</span>
-                            </div>
-                            <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                                <div class="progress-bar bg-blue-600 h-full w-0 rounded-full shadow-[0_0_8px_rgba(37,99,235,0.3)] transition-all duration-1000" data-width="85%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm font-semibold text-blue-900">UI/UX Design (Figma)</span>
-                                <span class="text-xs text-blue-400 font-bold counter" data-target="80">0%</span>
-                            </div>
-                            <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                                <div class="progress-bar bg-blue-600 h-full w-0 rounded-full shadow-[0_0_8px_rgba(37,99,235,0.3)] transition-all duration-1000" data-width="80%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm font-semibold text-blue-900">Graphic Design (Photoshop)</span>
-                                <span class="text-xs text-blue-400 font-bold counter" data-target="80">0%</span>
-                            </div>
-                            <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                                <div class="progress-bar bg-blue-600 h-full w-0 rounded-full shadow-[0_0_8px_rgba(37,99,235,0.3)] transition-all duration-1000" data-width="80%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="space-y-6">
-                    <h3 class="text-sm font-black uppercase tracking-widest text-blue-600 italic">Soft Skills</h3>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="skill-badge">Leadership</span>
-                        <span class="skill-badge">Public Speaking</span>
-                        <span class="skill-badge">Problem Solving</span>
-                        <span class="skill-badge">Critical Thinking</span>
-                        <span class="skill-badge">Time Management</span>
-                        <span class="skill-badge">Collaboration</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- ORGANISASI -->
+        <section id="experience" class="mb-24">
+            <h2 class="text-3xl font-bold mb-10 text-center text-blue-950">Pengalaman & Organisasi</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="notion-card p-8 rounded-3xl border-2 border-transparent hover:border-blue-600 transition-all group shadow-sm">
+                    <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-inner">🏛️</div>
+                    <h3 class="text-2xl font-bold mb-1 text-slate-800">HMJ HIMASI UMSU</h3>
+                    <p class="text-blue-600 font-bold mb-4">Divisi MEDINFO (UNIT DESIGN GRAFIS)</p>
+                    <p class="text-slate-500 text-sm leading-relaxed">Bertanggung jawab atas identitas visual organisasi, pembuatan konten media sosial, dan desain publikasi acara tahunan.</p>
+                </div>
+                <div class="notion-card p-8 rounded-3xl border-2 border-transparent hover:border-blue-600 transition-all group shadow-sm">
+                    <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-inner">🗞️</div>
+                    <h3 class="text-2xl font-bold mb-1 text-slate-800">UKM LPM Teropong</h3>
+                    <p class="text-blue-600 font-bold mb-4">Reporter & Tim Kreatif</p>
+                    <p class="text-slate-500 text-sm leading-relaxed">Aktif dalam peliputan berita kampus, penulisan artikel jurnalistik, dan dokumentasi visual untuk platform media mahasiswa.</p>
+                </div>
+            </div>
+        </section>
 
-        <section id="experience" class="mb-24">
-            <h2 class="text-3xl font-bold mb-10 text-center text-blue-950">Pengalaman & Organisasi</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="notion-card p-8 rounded-3xl border-2 border-transparent hover:border-blue-600 transition-all group shadow-sm">
-                    <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-inner">🏛️</div>
-                    <h3 class="text-2xl font-bold mb-1 text-slate-800">HMJ HIMASI UMSU</h3>
-                    <p class="text-blue-600 font-bold mb-4">Divisi MEDINFO (UNIT DESIGN GRAFIS)</p>
-                    <p class="text-slate-500 text-sm leading-relaxed">Bertanggung jawab atas identitas visual organisasi, pembuatan konten media sosial, dan desain publikasi acara tahunan.</p>
-                </div>
-                <div class="notion-card p-8 rounded-3xl border-2 border-transparent hover:border-blue-600 transition-all group shadow-sm">
-                    <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-inner">🗞️</div>
-                    <h3 class="text-2xl font-bold mb-1 text-slate-800">UKM LPM Teropong</h3>
-                    <p class="text-blue-600 font-bold mb-4">Reporter & Tim Kreatif</p>
-                    <p class="text-slate-500 text-sm leading-relaxed">Aktif dalam peliputan berita kampus, penulisan artikel jurnalistik, dan dokumentasi visual untuk platform media mahasiswa.</p>
-                </div>
-            </div>
-        </section>
+        <!-- PROJECT SHOWCASE -->
+        <section id="projects" class="mb-24">
+            <div class="flex items-end justify-between mb-10">
+                <div>
+                    <h2 class="text-4xl font-bold tracking-tight mb-2 text-blue-950">Showcase Project</h2>
+                    <p class="text-blue-500/70 font-medium text-sm italic">Solusi digital yang dibangun dengan presisi.</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="notion-card rounded-[2.5rem] overflow-hidden flex flex-col h-full group shadow-sm">
+                    <div class="h-60 bg-blue-100/50 overflow-hidden relative">
+                        <img src="joki.png" alt="Project 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-[10px] font-bold px-3 py-1 bg-blue-100 rounded-full text-blue-600 uppercase tracking-widest border border-blue-200">Web Development</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-slate-800">Sistem Joki Tugas</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">Aplikasi berbasis web untuk mengelola Joki dan juga Tugas Mahasiswa yang dibuat dengan html dan css.</p>
+                     <a href="https://masjoki.netlify.app/" class="bg-white border border-blue-200 text-blue-700 px-6 py-3 rounded-xl font-semibold hover:bg-blue-50 transition-all text-sm inline-block mt-4" target="_blank" rel="noopener">Source Code</a>
+                    </div>
+                </div>
 
-        <section id="projects" class="mb-24">
-            <div class="flex items-end justify-between mb-10">
-                <div>
-                    <h2 class="text-4xl font-bold tracking-tight mb-2 text-blue-950">Showcase Project</h2>
-                    <p class="text-blue-500/70 font-medium text-sm italic">Solusi digital yang dibangun dengan presisi.</p>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="notion-card rounded-[2.5rem] overflow-hidden flex flex-col h-full group shadow-sm">
-                    <div class="h-60 bg-blue-100/50 overflow-hidden relative">
-                        <img src="joki.png" alt="Project 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                    </div>
-                    <div class="p-8">
-                        <div class="flex gap-2 mb-4">
-                            <span class="text-[10px] font-bold px-3 py-1 bg-blue-100 rounded-full text-blue-600 uppercase tracking-widest border border-blue-200">Web Development</span>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3 text-slate-800">Sistem Joki Tugas</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed">Aplikasi berbasis web untuk mengelola Joki dan juga Tugas Mahasiswa yang dibuat dengan html dan css.</p>
-                        <a href="https://masjoki.netlify.app/" class="bg-white border border-blue-200 text-blue-700 px-6 py-3 rounded-xl font-semibold hover:bg-blue-50 transition-all text-sm inline-block mt-4" target="_blank">Source Code</a>
-                    </div>
-                </div>
-                <div class="notion-card rounded-[2.5rem] overflow-hidden flex flex-col h-full group shadow-sm">
-                    <div class="h-60 bg-blue-100/50 overflow-hidden relative">
-                        <img src="laundry.png" alt="Project 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                    </div>
-                    <div class="p-8">
-                        <div class="flex gap-2 mb-4">
-                            <span class="text-[10px] font-bold px-3 py-1 bg-blue-100 rounded-full text-blue-600 uppercase tracking-widest border border-blue-200">Web Development</span>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3 text-slate-800">Sistem laundry</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed">Aplikasi berbasis web yang dikerjakan menggunakan html dan css sederhana.</p>
-                        <a href="https://aidildaffa.netlify.app/" class="bg-white border border-blue-200 text-blue-700 px-6 py-3 rounded-xl font-semibold hover:bg-blue-50 transition-all text-sm inline-block mt-4" target="_blank">Source Code</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+                <div class="notion-card rounded-[2.5rem] overflow-hidden flex flex-col h-full group shadow-sm">
+                    <div class="h-60 bg-blue-100/50 overflow-hidden relative">
+                        <img src="laundry.png" alt="Project 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-[10px] font-bold px-3 py-1 bg-blue-100 rounde d-full text-blue-600 uppercase tracking-widest border border-blue-200">Web Development</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-slate-800">Sistem laundry</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">Aplikasi berbasis web yang dikerjakan menggunakan html dan css sederhana.</p>
+                        <a href="https://aidildaffa.netlify.app/" class="bg-white border border-blue-200 text-blue-700 px-6 py-3 rounded-xl font-semibold hover:bg-blue-50 transition-all text-sm inline-block mt-4" target="_blank" rel="noopener">Source Code</a>
+                    </div>
+                </div>
 
-    <footer class="bg-blue-900 py-20 px-6 text-white">
-        <div class="max-w-5xl mx-auto flex flex-col items-center text-center space-y-8">
-            <h2 class="text-2xl font-bold tracking-tight">Mari berkolaborasi membangun <br> solusi digital yang bermakna.</h2>
-            <div class="flex gap-8 text-sm font-bold text-blue-300">
-                <a href="https://www.linkedin.com/in/xaidil-daffa-3249b53b3/" class="hover:text-white transition-colors uppercase tracking-widest" target="_blank">LinkedIn</a>
-                <a href="https://github.com/Aidldppa" class="hover:text-white transition-colors uppercase tracking-widest" target="_blank">GitHub</a>
-                <a href="https://www.instagram.com/_aidldppa?igsh=emRoYXNpZjBwcGZy" class="hover:text-white transition-colors uppercase tracking-widest" target="_blank">Instagram</a>
-            </div>
-            <div class="pt-8 text-xs text-blue-400">© 2024 Aidil Daffa. Tugas Praktikum Minggu 3.</div>
-        </div>
-    </footer><script>
-    // ==========================================
-    // 1. KONFIGURASI TAILWIND (Tetap Sama)
-    // ==========================================
-    tailwind.config = {
-        darkMode: 'class',
-    }
+                <div class="notion-card rounded-[2.5rem] overflow-hidden flex flex-col h-full group shadow-sm">
+                    <div class="h-60 bg-blue-100/50 overflow-hidden relative">
+                        <img src="poster.png" alt="Project 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-[10px] font-bold px-3 py-1 bg-blue-100 rounded-full text-blue-600 uppercase tracking-widest border border-blue-200">Visual Branding</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-slate-800">Poster & Flyer Branding</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">Pengembangan identitas visual baru yang lebih modern untuk era digitalisasi kampus di design menggunakan canva dan figma.</p>
+                    </div>
+                </div>
 
-    // ==========================================
-    // 2. LOGIKA TEMA (Tetap Sama)
-    // ==========================================
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    const themeIcon = document.getElementById('theme-icon');
-    const html = document.documentElement;
+                <div class="notion-card rounded-[2.5rem] overflow-hidden flex flex-col h-full group shadow-sm">
+                    <div class="h-60 bg-blue-100/50 overflow-hidden relative">
+                        <img src="majalah.png" alt="Project 4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-[10px] font-bold px-3 py-1 bg-blue-100 rounded-full text-blue-600 uppercase tracking-widest border border-blue-200">Journalism</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-slate-800">Majalah Digital Layout</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">Karya jurnalistik yaitu sebuah majalah yang dibuat dan di design beradasarkan layout.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        html.classList.add('dark');
-        themeIcon.innerText = '☀️';
-    } else {
-        html.classList.remove('dark');
-        themeIcon.innerText = '🌙';
-    }
+    </main>
 
-    themeToggleBtn.addEventListener('click', () => {
-        html.classList.toggle('dark');
-        if (html.classList.contains('dark')) {
-            localStorage.setItem('theme', 'dark');
-            themeIcon.innerText = '☀️';
-        } else {
-            localStorage.setItem('theme', 'light');
-            themeIcon.innerText = '🌙';
-        }
-    });
+    <footer class="bg-blue-900 py-20 px-6 text-white">
+        <div class="max-w-5xl mx-auto flex flex-col items-center text-center space-y-8">
+            <h2 class="text-2xl font-bold tracking-tight">Mari berkolaborasi membangun <br> solusi digital yang bermakna.</h2>
+            <div class="flex gap-8 text-sm font-bold text-blue-300">
+                <a href="https://www.linkedin.com/in/xaidil-daffa-3249b53b3/" class="hover:text-white transition-colors uppercase tracking-widest" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://github.com/Aidldppa" class="hover:text-white transition-colors uppercase tracking-widest" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://www.instagram.com/_aidldppa?igsh=emRoYXNpZjBwcGZy" class="hover:text-white transition-colors uppercase tracking-widest" target="_blank" rel="noopener">Instagram</a>
+            </div>
+            <div class="pt-8 text-xs text-blue-400">
+                © 2024 Aidil Daffa. Tugas Praktikum Minggu 3.
+            </div>
+        </div>
+    </footer>
+    <script>
+    // Konfigurasi Tailwind untuk mendeteksi class "dark"
+    tailwind.config = {
+        darkMode: 'class',
+    }
 
-    // ==========================================
-    // 3. ANIMASI SKILLS (Tetap Sama)
-    // ==========================================
-    function animateSkills() {
-        const counters = document.querySelectorAll('.counter');
-        const bars = document.querySelectorAll('.progress-bar');
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const html = document.documentElement;
 
-        counters.forEach(counter => {
-            const target = +counter.getAttribute('data-target');
-            let count = 0;
-            const updateCount = () => {
-                const speed = target / 100;
-                if (count < target) {
-                    count += speed;
-                    counter.innerText = Math.ceil(count) + '%';
-                    setTimeout(updateCount, 15);
-                } else {
-                    counter.innerText = target + '%';
-                }
-            };
-            updateCount();
-        });
+    // Cek tema saat halaman dimuat
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        html.classList.add('dark');
+        themeIcon.innerText = '☀️';
+    } else {
+        html.classList.remove('dark');
+        themeIcon.innerText = '🌙';
+    }
 
-        bars.forEach(bar => {
-            const width = bar.getAttribute('data-width');
-            setTimeout(() => {
-                bar.style.width = width;
-            }, 200);
-        });
-    }
-
-    // ==========================================
-    // 4. ANIMASI SCROLL (FADE-IN & SLIDE-UP) -> BARU!
-    // ==========================================
-    // Kita pakai Intersection Observer API untuk mendeteksi elemen saat masuk layar
-
-    const observer = new Intersection Observer((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show'); // Tambahkan class 'show' saat elemen muncul
-                
-                // Khusus untuk section skills, jalankan animasi bar
-                if (entry.target.id === 'skills') {
-                    animateSkills();
-                }
-            }
-        });
-    }, {
-        threshold: 0.15 // Jalankan animasi saat 15% elemen sudah masuk layar
-    });
-
-    // Pilih elemen-elemen yang ingin diberi animasi
-    const hiddenElements = document.querySelectorAll('section, h2, .notion-card');
-    hiddenElements.forEach((el) => {
-        el.classList.add('hidden-reveal'); // Beri class awal agar elemen tersembunyi
-        observer.observe(el); // Mulai mengamati elemen
-    });
-
-    // ==========================================
-    // 5. KURSOR PENGIKUT CUSTOM (BARU!)
-    // ==========================================
-    // Opsional, jika ingin efek kursor yang kece
-
-    const cursor = document.createElement('div');
-    cursor.id = 'custom-cursor';
-    document.body.appendChild(cursor);
-
-    window.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-    });
-
-    // Tambahkan efek saat menunjuk link/tombol
-    document.querySelectorAll('a, button').forEach((link) => {
-        link.addEventListener('mouseenter', () => cursor.classList.add('active'));
-        link.addEventListener('mouseleave', () => cursor.classList.remove('active'));
-    });
-
+    // Fungsi klik tombol
+    themeToggleBtn.addEventListener('click', () => {
+        html.classList.toggle('dark');
+        
+        if (html.classList.contains('dark')) {
+            localStorage.setItem('theme', 'dark');
+            themeIcon.innerText = '☀️';
+        } else {
+            localStorage.setItem('theme', 'light');
+            themeIcon.innerText = '🌙';
+        }
+    });
 </script>
-</body>
-</html>vv
 
+</body>
+
+</html>
