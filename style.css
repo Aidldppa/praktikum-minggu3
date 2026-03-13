@@ -1,63 +1,91 @@
-/* 1. DASAR & TRANSISI HALUS */
+/* --- Aturan Dasar & Light Mode --- */
 body {
     font-family: 'Inter', sans-serif;
     color: #37352f;
     background-color: #f8fafc;
     scroll-behavior: smooth;
-    transition: background-color 0.4s ease, color 0.4s ease;
-    overflow-x: hidden; /* Mencegah scroll horizontal akibat animasi kursor */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* 2. LOGIKA DARK MODE OVERRIDE */
+/* --- LOGIKA DARK MODE --- */
+/* Kita "memaksa" perubahan warna pada elemen spesifik saat mode dark aktif */
+
 .dark body {
-    background-color: #0f172a; /* Slate-900 */
+    background-color: #0f172a; /* Warna Slate-900 */
     color: #f1f5f9;
 }
 
-.dark h1, .dark h2, .dark h3, 
+/* Ubah warna judul yang pakai class slate-900 agar jadi terang */
 .dark .text-slate-900, 
-.dark .text-blue-950, 
-.dark .text-blue-900 {
+.dark .text-blue-950,
+.dark h1, .dark h2, .dark h3 {
     color: #f8fafc !important;
 }
 
-.dark p, .dark .text-slate-500 {
+/* Ubah warna teks deskripsi */
+.dark .text-slate-500 {
     color: #94a3b8 !important;
 }
 
-.dark .notion-card, 
-.dark section#skills {
-    background-color: #1e293b !important; /* Slate-800 */
+/* Kartu Gaya Notion (Dark Version) */
+.dark .notion-card {
+    background: #1e293b !important; /* Slate-800 */
     border-color: #334155 !important;
 }
 
+.dark .notion-card:hover {
+    background-color: #1e293b;
+    border-color: #3b82f6 !important;
+    box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+/* Navigasi saat Dark Mode */
 .dark .glass-nav {
     background: rgba(15, 23, 42, 0.8) !important;
     border-color: rgba(30, 41, 59, 0.5) !important;
 }
 
-.dark .skill-badge {
-    background: #334155;
-    color: #60a5fa;
-    border-color: #475569;
+.dark nav span.text-blue-900 {
+    color: #60a5fa !important; /* Biru muda agar terbaca */
 }
 
-/* 3. KOMPONEN ASLI (NOTION STYLE) */
+/* Section Skills (Warna Putih diganti Gelap) */
+.dark section#skills {
+    background-color: #1e293b !important;
+    border-color: #334155 !important;
+}
+
+/* Badge Keahlian Dark Mode */
+.dark .skill-badge {
+    background: #0f172a;
+    color: #60a5fa;
+    border-color: #1e293b;
+}
+
+/* Tombol Toggle Dark Mode agar kontras */
+#theme-toggle {
+    transition: transform 0.2s ease;
+}
+#theme-toggle:active {
+    transform: scale(0.9);
+}
+
+/* --- KODE LAINNYA (NOTION CARD ASLI, DLL) --- */
 .notion-card {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid #e2e8f0;
     background: white; 
 }
 
 .notion-card:hover {
     background-color: #f0f7ff;
-    transform: translateY(-6px);
-    box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px -10px rgba(59, 130, 246, 0.15);
     border-color: #bfdbfe;
 }
 
 .glass-nav {
-    background: rgba(255, 255, 255, 0.8); 
+    background: rgba(248, 250, 252, 0.8); 
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 }
@@ -72,51 +100,7 @@ body {
     border: 1px solid #dbeafe;
 }
 
-/* 4. ANIMASI PROGRESS BAR */
-.progress-bar {
-    transition: width 1.5s cubic-bezier(0.1, 0.5, 0.5, 1);
-}
-
-/* 5. ANIMASI SCROLL REVEAL (MUNCUL SAAT DI-SCROLL) */
-.hidden-reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-.hidden-reveal.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* 6. KURSOR CUSTOM (PENGIKUT) */
-#custom-cursor {
-    width: 20px;
-    height: 20px;
-    background-color: rgba(37, 99, 235, 0.4);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none; /* Penting: agar kursor tidak menghalangi klik */
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
-}
-
-#custom-cursor.active {
-    width: 50px;
-    height: 50px;
-    background-color: rgba(37, 99, 235, 0.1);
-    border: 2px solid rgba(37, 99, 235, 0.5);
-}
-
-/* Sembunyikan kursor custom di layar sentuh (HP/Tablet) */
-@media (max-width: 1024px) {
-    #custom-cursor { display: none; }
-}
-
-/* 7. RESPONSIVE DESIGN (MOBILE FIXES) */
+/* Media Queries mu tetap taruh di bawah sini */
 @media (max-width: 767px) {
-    h1 { font-size: 2.25rem !important; line-height: 1.2; }
-    .notion-card { border-radius: 1.5rem; }
-    section { margin-bottom: 4rem; }
+    /* ... kode mobile mu ... */
 }
