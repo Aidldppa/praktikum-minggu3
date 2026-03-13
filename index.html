@@ -202,71 +202,119 @@
             </div>
             <div class="pt-8 text-xs text-blue-400">© 2024 Aidil Daffa. Tugas Praktikum Minggu 3.</div>
         </div>
-    </footer>
+    </footer><script>
+    // ==========================================
+    // 1. KONFIGURASI TAILWIND (Tetap Sama)
+    // ==========================================
+    tailwind.config = {
+        darkMode: 'class',
+    }
 
-    <script>
-        // 1. KONFIGURASI TAILWIND DARK MODE
-        tailwind.config = {
-            darkMode: 'class',
-        }
+    // ==========================================
+    // 2. LOGIKA TEMA (Tetap Sama)
+    // ==========================================
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const html = document.documentElement;
 
-        // 2. LOGIKA TEMA (DARK/LIGHT)
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        const themeIcon = document.getElementById('theme-icon');
-        const html = document.documentElement;
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        html.classList.add('dark');
+        themeIcon.innerText = '☀️';
+    } else {
+        html.classList.remove('dark');
+        themeIcon.innerText = '🌙';
+    }
 
-        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            html.classList.add('dark');
+    themeToggleBtn.addEventListener('click', () => {
+        html.classList.toggle('dark');
+        if (html.classList.contains('dark')) {
+            localStorage.setItem('theme', 'dark');
             themeIcon.innerText = '☀️';
         } else {
-            html.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
             themeIcon.innerText = '🌙';
         }
+    });
 
-        themeToggleBtn.addEventListener('click', () => {
-            html.classList.toggle('dark');
-            if (html.classList.contains('dark')) {
-                localStorage.setItem('theme', 'dark');
-                themeIcon.innerText = '☀️';
-            } else {
-                localStorage.setItem('theme', 'light');
-                themeIcon.innerText = '🌙';
-            }
+    // ==========================================
+    // 3. ANIMASI SKILLS (Tetap Sama)
+    // ==========================================
+    function animateSkills() {
+        const counters = document.querySelectorAll('.counter');
+        const bars = document.querySelectorAll('.progress-bar');
+
+        counters.forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            let count = 0;
+            const updateCount = () => {
+                const speed = target / 100;
+                if (count < target) {
+                    count += speed;
+                    counter.innerText = Math.ceil(count) + '%';
+                    setTimeout(updateCount, 15);
+                } else {
+                    counter.innerText = target + '%';
+                }
+            };
+            updateCount();
         });
 
-        // 3. ANIMASI SKILLS (COUNTER & PROGRESS BAR)
-        function animateSkills() {
-            const counters = document.querySelectorAll('.counter');
-            const bars = document.querySelectorAll('.progress-bar');
+        bars.forEach(bar => {
+            const width = bar.getAttribute('data-width');
+            setTimeout(() => {
+                bar.style.width = width;
+            }, 200);
+        });
+    }
 
-            // Animasi Angka
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                let count = 0;
-                const updateCount = () => {
-                    const speed = target / 100;
-                    if (count < target) {
-                        count += speed;
-                        counter.innerText = Math.ceil(count) + '%';
-                        setTimeout(updateCount, 15);
-                    } else {
-                        counter.innerText = target + '%';
-                    }
-                };
-                updateCount();
-            });
+    // ==========================================
+    // 4. ANIMASI SCROLL (FADE-IN & SLIDE-UP) -> BARU!
+    // ==========================================
+    // Kita pakai Intersection Observer API untuk mendeteksi elemen saat masuk layar
 
-            // Animasi Bar
-            bars.forEach(bar => {
-                const width = bar.getAttribute('data-width');
-                setTimeout(() => {
-                    bar.style.width = width;
-                }, 200);
-            });
-        }
+    const observer = new Intersection Observer((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show'); // Tambahkan class 'show' saat elemen muncul
+                
+                // Khusus untuk section skills, jalankan animasi bar
+                if (entry.target.id === 'skills') {
+                    animateSkills();
+                }
+            }
+        });
+    }, {
+        threshold: 0.15 // Jalankan animasi saat 15% elemen sudah masuk layar
+    });
 
-        // Jalankan saat halaman dimuat
-        window.addEventListener('DOMContentLoaded', animateSkills);
-    </script>
+    // Pilih elemen-elemen yang ingin diberi animasi
+    const hiddenElements = document.querySelectorAll('section, h2, .notion-card');
+    hiddenElements.forEach((el) => {
+        el.classList.add('hidden-reveal'); // Beri class awal agar elemen tersembunyi
+        observer.observe(el); // Mulai mengamati elemen
+    });
+
+    // ==========================================
+    // 5. KURSOR PENGIKUT CUSTOM (BARU!)
+    // ==========================================
+    // Opsional, jika ingin efek kursor yang kece
+
+    const cursor = document.createElement('div');
+    cursor.id = 'custom-cursor';
+    document.body.appendChild(cursor);
+
+    window.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+
+    // Tambahkan efek saat menunjuk link/tombol
+    document.querySelectorAll('a, button').forEach((link) => {
+        link.addEventListener('mouseenter', () => cursor.classList.add('active'));
+        link.addEventListener('mouseleave', () => cursor.classList.remove('active'));
+    });
+
+</script>
 </body>
 </html>vv
+
