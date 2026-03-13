@@ -1,19 +1,19 @@
-/* 1. ATURAN DASAR & TRANSISI GLOBAL */
+/* 1. DASAR & TRANSISI HALUS */
 body {
     font-family: 'Inter', sans-serif;
     color: #37352f;
-    background-color: #f8fafc; /* Slate-50 */
+    background-color: #f8fafc;
     scroll-behavior: smooth;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    overflow-x: hidden; /* Mencegah scroll horizontal akibat animasi kursor */
 }
 
-/* 2. LOGIKA DARK MODE (override) */
+/* 2. LOGIKA DARK MODE OVERRIDE */
 .dark body {
     background-color: #0f172a; /* Slate-900 */
     color: #f1f5f9;
 }
 
-/* Judul saat Dark Mode */
 .dark h1, .dark h2, .dark h3, 
 .dark .text-slate-900, 
 .dark .text-blue-950, 
@@ -21,12 +21,10 @@ body {
     color: #f8fafc !important;
 }
 
-/* Deskripsi saat Dark Mode */
 .dark p, .dark .text-slate-500 {
     color: #94a3b8 !important;
 }
 
-/* Kartu & Section saat Dark Mode */
 .dark .notion-card, 
 .dark section#skills {
     background-color: #1e293b !important; /* Slate-800 */
@@ -44,22 +42,22 @@ body {
     border-color: #475569;
 }
 
-/* 3. KARTU GAYA NOTION & NAV (ASLI) */
+/* 3. KOMPONEN ASLI (NOTION STYLE) */
 .notion-card {
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid #e2e8f0;
     background: white; 
 }
 
 .notion-card:hover {
     background-color: #f0f7ff;
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px -10px rgba(59, 130, 246, 0.15);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.2);
     border-color: #bfdbfe;
 }
 
 .glass-nav {
-    background: rgba(248, 250, 252, 0.8); 
+    background: rgba(255, 255, 255, 0.8); 
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 }
@@ -74,58 +72,51 @@ body {
     border: 1px solid #dbeafe;
 }
 
-/* 4. ANIMASI PROGRESS BAR & COUNTER ( Tetap Sama) */
+/* 4. ANIMASI PROGRESS BAR */
 .progress-bar {
     transition: width 1.5s cubic-bezier(0.1, 0.5, 0.5, 1);
 }
 
-/* 5. ANIMASI SCROLL (FADE-IN & SLIDE-UP) -> BARU! */
+/* 5. ANIMASI SCROLL REVEAL (MUNCUL SAAT DI-SCROLL) */
 .hidden-reveal {
     opacity: 0;
-    transform: translateY(30px); /* Mulai dari bawah */
-    transition: opacity 1s ease, transform 1s ease; /* Durasi 1 detik */
+    transform: translateY(40px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 .hidden-reveal.show {
     opacity: 1;
-    transform: translateY(0); /* Kembali ke posisi asli */
+    transform: translateY(0);
 }
 
-/* 6. KURSOR CUSTOM -> BARU! (Optional) */
+/* 6. KURSOR CUSTOM (PENGIKUT) */
 #custom-cursor {
     width: 20px;
     height: 20px;
-    background-color: rgba(37, 99, 235, 0.3); /* Biru transparan */
+    background-color: rgba(37, 99, 235, 0.4);
     border-radius: 50%;
     position: fixed;
-    pointer-events: none; /* Biar tidak mengganggu klik */
+    pointer-events: none; /* Penting: agar kursor tidak menghalangi klik */
     transform: translate(-50%, -50%);
-    z-index: 1000;
+    z-index: 9999;
     transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
 }
 
 #custom-cursor.active {
-    width: 35px;
-    height: 35px;
+    width: 50px;
+    height: 50px;
     background-color: rgba(37, 99, 235, 0.1);
     border: 2px solid rgba(37, 99, 235, 0.5);
 }
 
-/* 7. RESPONSIVE DESIGN (KODE ASLI KAMU) */
-@media (max-width: 1023px) {
-    .skills__grid, .skills-container { grid-template-columns: repeat(2, 1fr); }
-    .hero__title, h1 { font-size: 2.4rem; }
+/* Sembunyikan kursor custom di layar sentuh (HP/Tablet) */
+@media (max-width: 1024px) {
+    #custom-cursor { display: none; }
 }
 
+/* 7. RESPONSIVE DESIGN (MOBILE FIXES) */
 @media (max-width: 767px) {
-    body { font-size: 15px; }
-    .container, header, section, footer { padding: 16px; }
-    nav { padding: 8px 12px; }
-    .nav-right { display:flex; gap:10px; align-items:center; overflow-x:auto; }
-    .nav-link { padding:10px 12px; font-size:15px; white-space:nowrap }
-    h1, .hero__title { font-size:28px; text-align:center; margin-top:10px }
-    .subtitle, .hero__desc { font-size:14px; text-align:center; color:#6b7280; margin-top:6px }
-    .skills__grid, .skills-container { grid-template-columns: 1fr; gap:12px }
-    img { max-width:100%; height:auto; display:block }
-    .proj-img, .profile-img-pic { object-fit: cover; }
+    h1 { font-size: 2.25rem !important; line-height: 1.2; }
+    .notion-card { border-radius: 1.5rem; }
+    section { margin-bottom: 4rem; }
 }
