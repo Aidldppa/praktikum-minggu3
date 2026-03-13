@@ -2,9 +2,86 @@
 body {
     font-family: 'Inter', sans-serif;
     color: #37352f;
-    background-color: #f8fafc; /* Slate-50 */
+    background-color: #f8fafc;
     scroll-behavior: smooth;
+    transition: background-color 0.3s, color 0.3s; /* Transisi halus */
 }
+
+/* --- DARK MODE OVERRIDE --- */
+.dark body {
+    background-color: #0f172a; /* Slate-900 */
+    color: #f1f5f9;
+}
+
+/* Kartu Gaya Notion */
+.notion-card {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #e2e8f0;
+    background: white; 
+}
+
+/* Mode Gelap untuk Kartu */
+.dark .notion-card {
+    background: #1e293b; /* Slate-800 */
+    border-color: #334155;
+}
+
+.dark .notion-card h3 {
+    color: #f8fafc;
+}
+
+/* Efek Hover Kartu */
+.notion-card:hover {
+    background-color: #f0f7ff;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px -10px rgba(59, 130, 246, 0.15);
+    border-color: #bfdbfe;
+}
+
+.dark .notion-card:hover {
+    background-color: #1e293b;
+    border-color: #3b82f6;
+    box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+/* Navigasi Transparan Blur */
+.glass-nav {
+    background: rgba(248, 250, 252, 0.8); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.dark .glass-nav {
+    background: rgba(15, 23, 42, 0.8) !important;
+    border-color: rgba(30, 41, 59, 0.5);
+}
+
+/* Badge Keahlian */
+.skill-badge {
+    background: #eff6ff;
+    color: #2563eb;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid #dbeafe;
+}
+
+.dark .skill-badge {
+    background: #1e293b;
+    color: #60a5fa;
+    border-color: #334155;
+}
+
+/* Skills Section Dark Mode */
+.dark section#skills {
+    background-color: #1e293b !important;
+    border-color: #334155 !important;
+}
+
+/* Media Queries Tetap Sama... */
+@media (max-width: 1023px) { ... }
+@media (max-width: 767px) { ... }
 
 /* Kartu Gaya Notion */
 .notion-card {
@@ -100,3 +177,4 @@ body {
     .proj-img, .proj-img-area img, .profile-img-pic, .certificate-card img { object-fit: cover; }
 
 }
+
