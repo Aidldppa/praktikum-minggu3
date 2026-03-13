@@ -1,3 +1,6 @@
+.progress-bar {
+    transition: width 1.5s cubic-bezier(0.1, 0.5, 0.5, 1);
+}
 /* 1. ATURAN DASAR & TRANSISI */
 body {
     font-family: 'Inter', sans-serif;
@@ -94,3 +97,4 @@ body {
   img { max-width:100%; height:auto; display:block }
   .proj-img, .profile-img-pic { object-fit: cover; }
 }
+
