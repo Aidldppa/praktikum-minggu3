@@ -1,7 +1,4 @@
-.progress-bar {
-    transition: width 1.5s cubic-bezier(0.1, 0.5, 0.5, 1);
-}
-/* 1. ATURAN DASAR & TRANSISI */
+/* 1. ATURAN DASAR & TRANSISI GLOBAL */
 body {
     font-family: 'Inter', sans-serif;
     color: #37352f;
@@ -10,13 +7,13 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* 2. LOGIKA DARK MODE (Wajib ada agar warna berubah) */
+/* 2. LOGIKA DARK MODE (override) */
 .dark body {
     background-color: #0f172a; /* Slate-900 */
     color: #f1f5f9;
 }
 
-/* Mengubah semua teks judul menjadi terang saat dark mode */
+/* Judul saat Dark Mode */
 .dark h1, .dark h2, .dark h3, 
 .dark .text-slate-900, 
 .dark .text-blue-950, 
@@ -24,7 +21,7 @@ body {
     color: #f8fafc !important;
 }
 
-/* Mengubah teks deskripsi menjadi abu terang */
+/* Deskripsi saat Dark Mode */
 .dark p, .dark .text-slate-500 {
     color: #94a3b8 !important;
 }
@@ -47,7 +44,7 @@ body {
     border-color: #475569;
 }
 
-/* 3. KARTU GAYA NOTION (ASLI) */
+/* 3. KARTU GAYA NOTION & NAV (ASLI) */
 .notion-card {
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid #e2e8f0;
@@ -61,14 +58,12 @@ body {
     border-color: #bfdbfe;
 }
 
-/* Navigasi Transparan Blur */
 .glass-nav {
     background: rgba(248, 250, 252, 0.8); 
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 }
 
-/* Badge Keahlian */
 .skill-badge {
     background: #eff6ff;
     color: #2563eb;
@@ -79,22 +74,58 @@ body {
     border: 1px solid #dbeafe;
 }
 
-/* 4. RESPONSIVE DESIGN (KODE ASLI KAMU) */
+/* 4. ANIMASI PROGRESS BAR & COUNTER ( Tetap Sama) */
+.progress-bar {
+    transition: width 1.5s cubic-bezier(0.1, 0.5, 0.5, 1);
+}
+
+/* 5. ANIMASI SCROLL (FADE-IN & SLIDE-UP) -> BARU! */
+.hidden-reveal {
+    opacity: 0;
+    transform: translateY(30px); /* Mulai dari bawah */
+    transition: opacity 1s ease, transform 1s ease; /* Durasi 1 detik */
+}
+
+.hidden-reveal.show {
+    opacity: 1;
+    transform: translateY(0); /* Kembali ke posisi asli */
+}
+
+/* 6. KURSOR CUSTOM -> BARU! (Optional) */
+#custom-cursor {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(37, 99, 235, 0.3); /* Biru transparan */
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none; /* Biar tidak mengganggu klik */
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+}
+
+#custom-cursor.active {
+    width: 35px;
+    height: 35px;
+    background-color: rgba(37, 99, 235, 0.1);
+    border: 2px solid rgba(37, 99, 235, 0.5);
+}
+
+/* 7. RESPONSIVE DESIGN (KODE ASLI KAMU) */
 @media (max-width: 1023px) {
-  .skills__grid, .skills-container { grid-template-columns: repeat(2, 1fr); }
-  .hero__title, h1 { font-size: 2.4rem; }
+    .skills__grid, .skills-container { grid-template-columns: repeat(2, 1fr); }
+    .hero__title, h1 { font-size: 2.4rem; }
 }
 
 @media (max-width: 767px) {
-  body { font-size: 15px; }
-  .container, header, section, footer { padding: 16px; }
-  nav { padding: 8px 12px; }
-  .nav-right { display:flex; gap:10px; align-items:center; overflow-x:auto; }
-  .nav-link { padding:10px 12px; font-size:15px; white-space:nowrap }
-  h1, .hero__title { font-size:28px; text-align:center; margin-top:10px }
-  .subtitle, .hero__desc { font-size:14px; text-align:center; color:#6b7280; margin-top:6px }
-  .skills__grid, .skills-container { grid-template-columns: 1fr; gap:12px }
-  img { max-width:100%; height:auto; display:block }
-  .proj-img, .profile-img-pic { object-fit: cover; }
+    body { font-size: 15px; }
+    .container, header, section, footer { padding: 16px; }
+    nav { padding: 8px 12px; }
+    .nav-right { display:flex; gap:10px; align-items:center; overflow-x:auto; }
+    .nav-link { padding:10px 12px; font-size:15px; white-space:nowrap }
+    h1, .hero__title { font-size:28px; text-align:center; margin-top:10px }
+    .subtitle, .hero__desc { font-size:14px; text-align:center; color:#6b7280; margin-top:6px }
+    .skills__grid, .skills-container { grid-template-columns: 1fr; gap:12px }
+    img { max-width:100%; height:auto; display:block }
+    .proj-img, .profile-img-pic { object-fit: cover; }
 }
-
